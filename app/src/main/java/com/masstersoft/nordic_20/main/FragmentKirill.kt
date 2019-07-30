@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.masstersoft.nordic_20.R
 import kotlinx.android.synthetic.main.fragment_fragment_3.*
 
-class Fragment_3 : Fragment() {
+class FragmentKirill: Fragment() {
 
     var listener: NextFragmentInterface? = null
 
@@ -31,7 +31,7 @@ class Fragment_3 : Fragment() {
     fun init() {
         btn3.setOnClickListener {
             if (listener != null) {
-                (listener as NextFragmentInterface).nextFragment(FragmentKirill())
+                (listener as NextFragmentInterface).nextFragment(Fragment_1())
             }
         }
     }
