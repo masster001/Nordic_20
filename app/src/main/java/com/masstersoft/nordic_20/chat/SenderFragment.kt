@@ -13,12 +13,12 @@ import com.masstersoft.nordic_20.R
 
 class SenderFragment : Fragment() {
 
-    var listener: ProxyListener? = null
+    var listener: onSendAndOnReceive? = null
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        if (activity is ProxyListener)
-            listener = activity as ProxyListener
+        if (activity is onSendAndOnReceive)
+            listener = activity as onSendAndOnReceive
     }
 
     override fun onCreateView(
@@ -34,13 +34,13 @@ class SenderFragment : Fragment() {
         send.setOnClickListener {
 //            Toast.makeText(activity, "Button send clicked", Toast.LENGTH_SHORT)
 //                .show()
-            listener?.getReceiverListener()?.onReceive(info.text.toString())
+            listener?.onReceive(info.text.toString())
             info.text.clear()
 
         }
         receive.setOnClickListener {
             Toast.makeText(activity,
-                "Chat has about ${listener?.getCountListener()?.onSend()} items",
+                "Chat has about ${listener?.onSend()} items",
                 Toast.LENGTH_SHORT)
                 .show()
         }
