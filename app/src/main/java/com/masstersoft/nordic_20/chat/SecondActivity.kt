@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.masstersoft.nordic_20.R
 
-class SecondActivity : AppCompatActivity(), onSendAndOnReceive {
+class SecondActivity : AppCompatActivity(), ProxyListener {
 
     val receiverFragment = ReceiverFragment()
 
@@ -22,12 +22,8 @@ class SecondActivity : AppCompatActivity(), onSendAndOnReceive {
             .commit()
     }
 
-    override fun onSend(): Int {
-        return receiverFragment.onSend()
-    }
+    override fun getCountListener(): OnSend? = receiverFragment
 
-    override fun onReceive(arg: String) {
-        receiverFragment.onReceive(arg)
-    }
+    override fun getReceiverListener(): OnReceive? = receiverFragment
 
 }

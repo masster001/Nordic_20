@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.masstersoft.nordic_20.R
 import kotlinx.android.synthetic.main.receiver_layout.*
 
-class ReceiverFragment : Fragment(), onSendAndOnReceive {
+class ReceiverFragment : Fragment(), OnReceive, OnSend {
 
     override fun onCreateView(
         inflater: LayoutInflater,

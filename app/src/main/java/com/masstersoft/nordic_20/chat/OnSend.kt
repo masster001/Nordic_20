@@ -1,6 +1,5 @@
 package com.masstersoft.nordic_20.chat
 
-interface onSendAndOnReceive {
+interface OnSend {
     fun onSend(): Int
-    fun onReceive(arg: String)
 }
